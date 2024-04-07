@@ -1,0 +1,35 @@
+#
+# Credits: silviu20092
+#
+
+[worldserver]
+
+########################################
+# Mod Reforging configuration
+########################################
+#
+#    Reforging.Enable
+#        Description: Enable Reforging module
+#        Default:     0 - Disabled
+#                     1 - Enabled
+#
+
+Reforging.Enable = 1
+
+#
+#    Reforging.ReforgeableStats
+#        Description: Stats that can be reforged. These are usually secondary stats like spirit, hit rating, etc. These correspond
+#                     to ItemModType enum in ItemTemplate.h. Choose a MAXIMUM of 15 stats.
+#        Default:     6,13,14,31,32,36,37 (Spirit, Dodge Rating, Parry Rating, Hit Rating, Crit Rating, Haste Rating, Expertise Rating)
+#
+
+Reforging.ReforgeableStats = 6,13,14,31,32,36,37
+
+#
+#    Reforging.Percentage
+#        Description: A number between 10 and 90 which calculates how much from the reforged stat goes into another stat.
+#                     Example: if you reforge 130 Spirit and this percentage is 40, then the new stat will be 52 (40% of 130)
+#        Default:     40 - 40% of reforged stat goes to another (that's what Blizzard used back when reforging was a thing)
+#
+
+Reforging.Percentage = 40
