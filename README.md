@@ -15,7 +15,7 @@ Adds the possiblity to **reforge** items on 3.3.5a client. Reforging allows play
 3. Heirlooms can't be reforged.
 4. Items with random properties (like "of the Bear", "of Intellect") can't be reforged.
 
-**WARNING**: this is **NOT** compatible with the **Individual item upgrades**: https://github.com/silviu20092/azerothcore-item-upgrades
+**WARNING**: this is **NOT** compatible with the **Individual item upgrades**: https://github.com/silviu20092/azerothcore-item-upgrades, although you can have both systems, if an item is **both** upgraded and reforged, the stats won't be calculated properly. The two systems are not aware of each other and will step on each other's foot as both systems try to alter item's stats.
 
 ## How to install
 
