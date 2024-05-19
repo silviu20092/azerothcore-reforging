@@ -9,7 +9,11 @@
 class mod_reforging_worldscript : public WorldScript
 {
 public:
-    mod_reforging_worldscript() : WorldScript("mod_reforging_worldscript") {}
+    mod_reforging_worldscript() : WorldScript("mod_reforging_worldscript",
+        {
+            WORLDHOOK_ON_AFTER_CONFIG_LOAD,
+            WORLDHOOK_ON_BEFORE_WORLD_INITIALIZED
+        }) {}
 
     void OnAfterConfigLoad(bool reload) override
     {

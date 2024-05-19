@@ -29,7 +29,13 @@ private:
         Player* player;
     };
 public:
-    mod_reforging_playerscript() : PlayerScript("mod_reforging_playerscript") {}
+    mod_reforging_playerscript() : PlayerScript("mod_reforging_playerscript",
+        {
+            PLAYERHOOK_ON_AFTER_MOVE_ITEM_FROM_INVENTORY,
+            PLAYERHOOK_ON_DELETE_FROM_DB,
+            PLAYERHOOK_ON_LOGIN,
+            PLAYERHOOK_ON_APPLY_ITEM_MODS_BEFORE
+        }) {}
 
     void OnAfterMoveItemFromInventory(Player* player, Item* it, uint8 /*bag*/, uint8 /*slot*/, bool /*update*/) override
     {
@@ -45,6 +51,27 @@ public:
     void OnLogin(Player* player) override
     {
         new SendReforgePackets(player);
+    }
+
+    void OnApplyItemModsBefore(Player* player, uint8 slot, bool apply, uint8 itemProtoStatNumber, uint32 statType, int32& val) override
+    {
+        Item* item = player->GetItemByPos(INVENTORY_SLOT_BAG_0, slot);
+        if (!item)
+            return;
+
+        ItemTemplate const* proto = item->GetTemplate();
+        if (!proto || proto->StatsCount == 0)
+            return;
+
+        const ItemReforge::ReforgingData* reforging = sItemReforge->GetReforgingData(item);
+        if (reforging != nullptr)
+        {
+            if (itemProtoStatNumber == proto->StatsCount - 1)
+                sItemReforge->HandleStatModifier(player, reforging->stat_increase, reforging->stat_value, apply);
+
+            if (statType == reforging->stat_decrease)
+                val -= reforging->stat_value;
+        }
     }
 };
 

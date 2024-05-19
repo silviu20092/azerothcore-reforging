@@ -21,12 +21,12 @@ Adds the possiblity to **reforge** items on 3.3.5a client. Reforging allows play
 
 1. Clone this repository somewhere on your device.
 2. Copy mod-reforging to your AzerothCore repo modules folder.
-3. Copy reforging.patch to your AzerothCore repo (root level).
-4. Open a git command prompt in your AzerothCore repo root and use "patch -p1 < reforging.patch" (no quotes). Ignore any warnings about whitespace if any.
-5. Re-run cmake to generate the solution.
-6. Re-build your project.
-7. You should have mod_reforging.conf.dist copied in configs/modules after building, copy this to your server's binaries folder.
-8. Start the server, .sql files should automatically be imported in DB, if not, apply them manually.
+3. Re-run cmake to generate the solution.
+4. Re-build your project.
+5. You should have mod_reforging.conf.dist copied in configs/modules after building, copy this to your server's binaries folder.
+6. Start the server, .sql files should automatically be imported in DB, if not, apply them manually.
+
+WARNING: this mod requires at least this version of AzerothCore https://github.com/azerothcore/azerothcore-wotlk/commit/3988e9581d736f8c7891baaf13011e9df4f46fa4
 
 ## Ingame usage
 
