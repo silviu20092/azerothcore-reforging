@@ -7,6 +7,7 @@
 #include "Chat.h"
 #include "Tokenize.h"
 #include "StringConvert.h"
+#include "SpellMgr.h"
 #include "item_reforge.h"
 
 ItemReforge::ItemReforge()
