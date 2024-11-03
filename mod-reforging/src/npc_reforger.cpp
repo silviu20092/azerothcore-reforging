@@ -72,17 +72,17 @@ private:
     {
         if (item == nullptr)
         {
-            ItemReforge::SendMessageA(player, "There is no equipped item in that slot.");
+            ItemReforge::SendMessage(player, "There is no equipped item in that slot.");
             return false;
         }
         else if (sItemReforge->IsAlreadyReforged(item))
         {
-            ItemReforge::SendMessageA(player, "This item was already reforged.");
+            ItemReforge::SendMessage(player, "This item was already reforged.");
             return false;
         }
         else if (!sItemReforge->IsReforgeable(player, item))
         {
-            ItemReforge::SendMessageA(player, "This item is not reforgeable.");
+            ItemReforge::SendMessage(player, "This item is not reforgeable.");
             return false;
         }
 
@@ -304,7 +304,7 @@ public:
             uint32 decreaseStat = sender - (GOSSIP_SENDER_MAIN + 10);
             uint32 increaseStat = action;
             if (!sItemReforge->Reforge(player, itemMap[player->GetGUID().GetCounter()], decreaseStat, increaseStat))
-                ItemReforge::SendMessageA(player, "Could not reforge item, try again.");
+                ItemReforge::SendMessage(player, "Could not reforge item, try again.");
             else
                 sItemReforge->VisualFeedback(player);
 
