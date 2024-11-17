@@ -2,6 +2,7 @@
  * Credits: silviu20092
  */
 
+#include <cmath>
 #include "DatabaseEnv.h"
 #include "Player.h"
 #include "Chat.h"
@@ -296,7 +297,7 @@ uint32 ItemReforge::CalculateReforgePct(int32 value) const
     if (value <= 0)
         return 0;
 
-    return (uint32)(std::floorf((float)value * (GetPercentage() / 100.0f)));
+    return (uint32)(std::floor((float)value * (GetPercentage() / 100.0f)));
 }
 
 std::vector<_ItemStat> ItemReforge::LoadItemStatInfo(const Item* item, bool onlyReforgeable) const
