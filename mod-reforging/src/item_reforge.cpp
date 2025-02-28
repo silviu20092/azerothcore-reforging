@@ -9,6 +9,7 @@
 #include "Tokenize.h"
 #include "StringConvert.h"
 #include "SpellMgr.h"
+#include "WorldSessionMgr.h"
 #include "item_reforge.h"
 
 ItemReforge::ItemReforge()
@@ -805,8 +806,8 @@ void ItemReforge::HandleReload(Player* player, bool apply) const
 
 void ItemReforge::HandleReload(bool apply) const
 {
-    const SessionMap& sessions = sWorld->GetAllSessions();
-    SessionMap::const_iterator itr;
+    const WorldSessionMgr::SessionMap& sessions = sWorldSessionMgr->GetAllSessions();
+    WorldSessionMgr::SessionMap::const_iterator itr;
     for (itr = sessions.begin(); itr != sessions.end(); ++itr)
         if (itr->second && itr->second->GetPlayer() && itr->second->GetPlayer()->IsInWorld())
             HandleReload(itr->second->GetPlayer(), apply);

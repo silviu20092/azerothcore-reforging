@@ -37,23 +37,23 @@ public:
             PLAYERHOOK_ON_APPLY_ITEM_MODS_BEFORE
         }) {}
 
-    void OnAfterMoveItemFromInventory(Player* player, Item* it, uint8 /*bag*/, uint8 /*slot*/, bool /*update*/) override
+    void OnPlayerAfterMoveItemFromInventory(Player* player, Item* it, uint8 /*bag*/, uint8 /*slot*/, bool /*update*/) override
     {
         sItemReforge->RemoveReforge(player, it, true);
     }
 
-    void OnDeleteFromDB(CharacterDatabaseTransaction trans, uint32 guid) override
+    void OnPlayerDeleteFromDB(CharacterDatabaseTransaction trans, uint32 guid) override
     {
         trans->Append("DELETE FROM character_reforging WHERE guid = {}", guid);
         sItemReforge->HandleCharacterRemove(guid);
     }
 
-    void OnLogin(Player* player) override
+    void OnPlayerLogin(Player* player) override
     {
         new SendReforgePackets(player);
     }
 
-    void OnApplyItemModsBefore(Player* player, uint8 slot, bool apply, uint8 itemProtoStatNumber, uint32 statType, int32& val) override
+    void OnPlayerApplyItemModsBefore(Player* player, uint8 slot, bool apply, uint8 itemProtoStatNumber, uint32 statType, int32& val) override
     {
         Item* item = player->GetItemByPos(INVENTORY_SLOT_BAG_0, slot);
         if (!item)
