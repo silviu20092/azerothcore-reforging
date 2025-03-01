@@ -19,12 +19,11 @@ Adds the possiblity to **reforge** items on 3.3.5a client. Reforging allows play
 
 ## How to install
 
-1. Clone this repository somewhere on your device.
-2. Copy mod-reforging to your AzerothCore repo modules folder.
-3. Re-run cmake to generate the solution.
-4. Re-build your project.
-5. You should have mod_reforging.conf.dist copied in configs/modules after building, copy this to your server's binaries folder.
-6. Start the server, .sql files should automatically be imported in DB, if not, apply them manually.
+1. Clone this repository to your AzerothCore repo modules folder. You should now have mod-reforging folder there.
+2. Re-run cmake to generate the solution.
+3. Re-build your project.
+4. You should have mod_reforging.conf.dist copied in configs/modules after building, copy this to your server's binaries folder.
+5. Start the server, .sql files should automatically be imported in DB, if not, apply them manually.
 
 WARNING: this mod requires at least this version of AzerothCore https://github.com/azerothcore/azerothcore-wotlk/commit/3988e9581d736f8c7891baaf13011e9df4f46fa4
 
@@ -34,11 +33,11 @@ Use .npc add 200004 to spawn the Master Reforger NPC. The rest is self explanato
 
 ## Some photos
 
-![pic1](https://github.com/silviu20092/azerothcore-reforging/blob/master/pics/pic1.jpg?raw=true)
-![pic2](https://github.com/silviu20092/azerothcore-reforging/blob/master/pics/pic2.jpg?raw=true)
-![pic3](https://github.com/silviu20092/azerothcore-reforging/blob/master/pics/pic3.jpg?raw=true)
-![pic4](https://github.com/silviu20092/azerothcore-reforging/blob/master/pics/pic4.jpg?raw=true)
-![pic5](https://github.com/silviu20092/azerothcore-reforging/blob/master/pics/pic5.jpg?raw=true)
+![pic1](https://github.com/silviu20092/mod-reforging/blob/master/pics/pic1.jpg?raw=true)
+![pic2](https://github.com/silviu20092/mod-reforging/blob/master/pics/pic2.jpg?raw=true)
+![pic3](https://github.com/silviu20092/mod-reforging/blob/master/pics/pic3.jpg?raw=true)
+![pic4](https://github.com/silviu20092/mod-reforging/blob/master/pics/pic4.jpg?raw=true)
+![pic5](https://github.com/silviu20092/mod-reforging/blob/master/pics/pic5.jpg?raw=true)
 
 ## Credits
 - silviu20092
